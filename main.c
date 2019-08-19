@@ -1,6 +1,41 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int indexOfMinimum(array, index){
+  int minValue = array[index];
+  int minIndex = index;
+  int i = 0;
+  
+  for(i = minIndex + 1; i < sizeof(array); i++){
+    if(array[i] < minValue){
+      minValue = array[i];
+      minIndex = i;
+    }
+  }
+  
+  return minIndex;
+  
+}
+
+
+void swap(array, firstIndex, secondIndex){
+  int temp;
+  
+  a = numbers[l];
+  numbers[l] = numbers[j];
+  numbers[j] = a;
+}
+
+void selectionSort(array){
+  int i, temp;
+  
+  for(i = 0; i < sizeof(array); i++){
+    temp = indexOfMinimum(array, i);
+    swap(array, temp, i);
+  }
+
+}
+
 int main(){
   int n, i, j, k, l, a;
   
@@ -15,20 +50,8 @@ int main(){
   }
   
   //sorts the array by swaping the numbers if one is bigger
-  for(l = 0; l < n; l++){
-  
-    for(j = l+1; j < n; j++){
-      
-      if(numbers[l] > numbers[j]){
-        
-        a = numbers[l];
-        numbers[l] = numbers[j];
-        numbers[j] = a;
-        
-      }
-    }
-  }
- 
+  selectionSort(numbers);
+           
   //print out values of array
   for(k = 0; k < n; k++){
     printf("%d ", numbers[i]);
